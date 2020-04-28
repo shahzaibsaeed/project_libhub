@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block left %}
+<div class="container container-section">
+  <br>
+  <p>Following is the result for {{choice}}: " {{search}} "</p>
+  <br>
+  <p>Click any book title to see reviews for that book. Click a book's ISBN to get data in JSON format for that book.</p>
+  <br>
+  <table class="table ">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year</th>
+          <th>ISBN</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for search in searches %}
+          <tr>
+            <td>
+              <a href="{{ url_for('BookRecord', search_id = search.id) }}">{{ search.title }}</a>
+            </td>
+            <td>{{ search.author }}</td>
+            <td>{{ search.year }}</td>
+            <td><a href="{{url_for('bookapi', isbn = search.isbn ) }}">{{ search.isbn }}</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+{% endblock %}
+{% block right %}
+<div class="container container-sidebar">
+  <h6>Logged in as: <span>{{ user }}</span></h6>
+
+</div>
+{% endblock %}

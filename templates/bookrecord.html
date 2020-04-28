@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block left %}
+<div class="container container-record">
+  <br>
+  <br>
+  {% for book in books %}
+    <h2>{{ book.title }}</h2>
+
+    <div class="container">
+      <p>By {{book.author}}</p>
+      <p>Published Year: {{book.year}}</p>
+      <p>ISBN: {{book.isbn}}</p>
+      <p>Review Counts (Goodreads*): {{review_count}}</p>
+      <p>Average Rating (Goodreads*): {{avg_rating}}</p>
+    </div>
+  {% endfor %}
+    <small class="text-muted">* Review counts and rating was accessed by Goodreads API</small>
+</div>
+
+<div class="container container-record">
+  <br>
+  <br>
+  <h2>Reviews</h2>
+  {% for review in reviews %}
+  <div class="container container-box" style="border-top: 2px dashed; padding: 24px; border-color: #17a2b8;">
+    <p><span style="color:#17a2b8" >{{review.username}}</span> rated this book {{ review.rating }} out of 5</p>
+    <p style="font-style:italic;margin-bottom: 0px">{{ review.feedback }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block right%}
+
+<div class="container container-sidebar">
+  <h6>Logged in as: <span>{{ user }}</span></h6>
+
+</div>
+
+<div class="container container-section">
+  <form class="" action="" method="post">
+    <fieldset class="form-group form-group-reviews">
+      <br>
+      <h2 style="  letter-spacing: 2px; text-transform: uppercase; font-weight: 400; font-size: 24px;">Give your Reviews!</h2>
+      <div class="container">
+        <legend>Your Rating</legend>
+        <div class="form-check-inline">
+          <label class="form-check-label" for="radio5">
+            <input type="radio" class="form-check-input" id="mycheckbox" name="mycheckbox" value="5">5
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label" for="radio4">
+            <input type="radio" class="form-check-input" id="mycheckbox" name="mycheckbox" value="4">4
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label" for="radio3">
+            <input type="radio" class="form-check-input" id="mycheckbox" name="mycheckbox" value="3">3
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label" for="radio2">
+            <input type="radio" class="form-check-input" id="mycheckbox" name="mycheckbox" value="2">2
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label" for="radio1">
+            <input type="radio" class="form-check-input" id="mycheckbox" name="mycheckbox" value="1">1
+          </label>
+        </div>
+      </div>
+
+      <div class="form-check">
+        <legend>Your Feedback</legend>
+        <textarea name="feedback" rows="8" cols="40" maxlength="300"></textarea>
+        <button style=" margin-top: 10px;" type="submit" class="btn btn-outline-info">Submit</button>
+        <small class="text-muted" style="margin-left:134px;font-style:italic">Max word limit is 300 words</small>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+
+{% endblock %}

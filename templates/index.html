@@ -1,0 +1,134 @@
+
+{% extends "layout.html" %}
+
+{% block nav %}
+<div class="navbar-nav ml-auto">
+<form class="form-inline my-2 my-lg-0" action="{{ url_for('index') }}" method="post">
+  {{ form1.hidden_tag() }}
+  <div class="form-group form-group-input">
+    {{ form1.username1.label (class="form-control-label") }}
+    {% if form1.username1.errors %}
+    {{ form1.username1 (class="form-control form-control-sm is-invalid") }}
+    <div class="invalid-feedback">
+      {% for error in form1.username1.errors %}
+        <span>{{ error }}</span>
+      {% endfor %}
+    </div>
+  {% else %}
+    {{ form1.username1 (class="form-control form-control-sm") }}
+  {% endif %}
+</div>
+<div class="form-group form-group-input">
+  {{ form1.password1.label (class="form-control-label") }}
+  {% if form1.password1.errors %}
+    {{ form1.password1 (class="form-control form-control-sm is-invalid") }}
+    <div class="invalid-feedback">
+      {% for error in form1.password1.errors %}
+        <span>{{ error }}</span>
+      {% endfor %}
+    </div>
+  {% else %}
+    {{ form1.password1 (class="form-control form-control-sm") }}
+  {% endif %}
+</div>
+<br>
+<div class="form-group">
+{{ form1.submit_login (class="btn btn-outline-info btn-outline-info-login") }}
+</div>
+</form>
+
+</div>
+{% endblock %}
+
+{% block right %}
+<div class="body-section">
+<form class="" action="" method="post" style="padding-left: 10px">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <h1>Create an account</h1>
+      <p>It's quick and easy</p>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            {{ form.first_name.label (class="form-control-label") }}
+            {{ form.first_name (class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group col-md-6">
+            {{ form.last_name.label (class="form-control-label") }}
+            {{ form.last_name (class="form-control form-control-lg") }}
+        </div>
+      </div>
+
+      <div class="form-group">
+          {{ form.username.label (class="form-control-label") }}
+          {% if form.username.errors %}
+            {{ form.username (class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ form.username (class="form-control form-control-lg") }}
+          {% endif %}
+      </div>
+      <div class="form-group">
+          {{ form.email.label (class="form-control-label") }}
+          {% if form.email.errors %}
+            {{ form.email (class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ form.email (class="form-control form-control-lg") }}
+          {% endif %}
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            {{ form.password.label (class="form-control-label") }}
+            {% if form.password.errors %}
+              {{ form.password (class="form-control form-control-lg is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.password.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.password (class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group col-md-6">
+            {{ form.confirm_password.label (class="form-control-label") }}
+            {% if form.confirm_password.errors %}
+              {{ form.confirm_password (class="form-control form-control-lg is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.confirm_password.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.confirm_password (class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+      </div>
+
+    </fieldset>
+    <div class="form-group">
+        {{ form.submit (class="btn btn-outline-info") }}
+    </div>
+</form>
+</div>
+{% endblock %}
+
+
+{% block left %}
+  <div class="content-section">
+    <h3>Welcome to LibHub</h3>
+    <br>
+    <p>LibHub helps you to find and share your reviews with people around the globe.</p>
+    <br>
+    <p>LibHub has the database of upto 5,000 books with the authentic rating and reviews.</p>
+
+  </div>
+{% endblock %}

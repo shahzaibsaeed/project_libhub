@@ -1,0 +1,120 @@
+body {
+  background-color: #ededed;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+.navbar{
+  background-color: #17a2b8 !important;
+  color: #fafafa;
+}
+
+.navbar .navbar-brand{
+  color: #fafafa;
+  font-size: xx-large;
+  letter-spacing: 18px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.navbar #username1, #password1{
+  height: 28px;
+  width: 55%;
+  margin-left: 10px;
+}
+
+.navbar-nav .nav-link{
+  color: #fafafa !important;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 10px;
+}
+
+
+.navbar .form-group-input{
+  margin-right: -30px;
+}
+.btn-outline-info-login{
+  border-color: #fafafa;
+  color: #fafafa;
+}
+
+.content-section h3{
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 34px;
+}
+
+.content-section p{
+  font-size: larger;
+  font-weight: 300;
+}
+
+.body-section h1{
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.container-section h2{
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 34px;
+}
+
+.container-section p{
+  font-size: larger;
+  font-weight: 300;
+}
+.container-section legend{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.container-section .form-control{
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.container-sidebar h6{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: right;
+}
+.container-sidebar span{
+  color: #17a2b8;
+}
+table{
+  text-align: center;
+  width: 100%;
+}
+
+.container-record h2{
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.container-record ..container-box{
+  border-top: 2px dashed !important;
+  padding: 24px;
+  border-color: #17a2b8;
+
+}
+
+.form-group-reviews h2{
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 34px;
+}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block left %}
+  <div class="container container-section">
+    <br>
+    <br>
+    <h2>Search LibHub</h2><br>
+    <p>Searched the books by Author, Title, Year and ISBN</p>
+    <br>
+    <form class="" action="{{url_for("search")}}" method="post">
+      <fieldset class="form-group">
+      <div class="form-check-inline">
+        <label class="form-check-label" for="radio1">
+          <input type="radio" class="form-check-input" id="mycheckbox" name="mycheckbox" value="1">Title
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label" for="radio2">
+          <input type="radio" class="form-check-input" id="mycheckbox" name="mycheckbox" value="2">Author
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label" for="radio3">
+          <input type="radio" class="form-check-input" id="mycheckbox" name="mycheckbox" value="3">Year
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label" for="radio3">
+          <input type="radio" class="form-check-input" id="mycheckbox" name="mycheckbox" value="4">ISBN
+        </label>
+      </div>
+      <div class="form-check">
+        <legend>Search For:</legend>
+        <input type="text" name="search_text" class="form-control form-control-sm">
+        <button type="submit" class="btn btn-outline-info">Submit</button>
+      </div>
+    </fieldset>
+
+    </form>
+    <small class="text-muted" style="font-style: italic">Searches are non case-sensitive. You may enter all lowercase for title or author.</small>
+
+
+  </div>
+
+{% endblock %}
+
+
+{% block right %}
+<div class="container container-sidebar">
+  <h6>Logged in as: <span>{{ user }}</span></h6>
+
+</div>
+{% endblock %}
