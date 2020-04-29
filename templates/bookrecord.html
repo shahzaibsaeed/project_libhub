@@ -11,7 +11,7 @@
       <p>By {{book.author}}</p>
       <p>Published Year: {{book.year}}</p>
       <p>ISBN: {{book.isbn}}</p>
-      <p>Review Counts (Goodreads*): {{review_count}}</p>
+      <p>Number of Reviews (Goodreads*): {{review_count}}</p>
       <p>Average Rating (Goodreads*): {{avg_rating}}</p>
     </div>
   {% endfor %}
@@ -22,12 +22,19 @@
   <br>
   <br>
   <h2>Reviews</h2>
-  {% for review in reviews %}
-  <div class="container container-box" style="border-top: 2px dashed; padding: 24px; border-color: #17a2b8;">
-    <p><span style="color:#17a2b8" >{{review.username}}</span> rated this book {{ review.rating }} out of 5</p>
-    <p style="font-style:italic;margin-bottom: 0px">{{ review.feedback }}</p>
+  {% if reviews %}
+    {% for review in reviews %}
+    <div class="container container-box" style="border-top: 2px dashed; padding: 24px; border-color: #17a2b8;">
+      <p><span style="color:#17a2b8" >{{review.username}}</span> rated this book {{ review.rating }} out of 5</p>
+      <p style="font-style:italic;margin-bottom: 0px;text-align:justify">{{ review.feedback }}</p>
+    </div>
+    {% endfor %}
+  {% else %}
+  <div class="container" style="font-style:italic">
+    <p>"No reviews found"</p>
   </div>
-  {% endfor %}
+  {% endif %}
+
 </div>
 
 {% endblock %}
@@ -75,9 +82,9 @@
 
       <div class="form-check">
         <legend>Your Feedback</legend>
-        <textarea name="feedback" rows="8" cols="40" maxlength="300"></textarea>
+        <textarea name="feedback" rows="8" cols="40" maxlength="500"></textarea>
         <button style=" margin-top: 10px;" type="submit" class="btn btn-outline-info">Submit</button>
-        <small class="text-muted" style="margin-left:134px;font-style:italic">Max word limit is 300 words</small>
+        <small class="text-muted" style="margin-left:134px;font-style:italic">Max word limit is 500 words</small>
       </div>
     </fieldset>
   </form>

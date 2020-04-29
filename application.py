@@ -148,7 +148,7 @@ def BookRecord(search_id):
                     return redirect(url_for("BookRecord", search_id = search_id))
 
             else:
-                 flash('Please provide review', 'warning')
+                 flash('Please provide rating and feedback', 'warning')
                  return redirect(url_for("BookRecord", search_id = search_id))
 
         return render_template('bookrecord.html', title = 'Books', books = books, avg_rating = avg_rating, review_count = reviews_count, reviews = reviews, user = session["user"])
